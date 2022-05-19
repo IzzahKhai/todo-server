@@ -37,18 +37,18 @@ This application was develop to implement a TODO-list server, where your users c
     ``` 
   http:localhost:8080/api/v1/task 
     ``` on Postman or any API /REST development tools to add a **new task.**
-  2. ![This is an example of adding new task.](/src-img/add.png)
-  3. Run
+  ![This is an example of adding new task.](/src-img/add.png)
+  2. Run
     ```
      http:localhost:8080/api/v1/tasks
     ``` 
  **to list all** task in the list.
-  4. Run 
+  3. Run 
     ```
   http:localhost:8080/api/v1/{userId}/{taskId}
     ```
         **to delete** all task in the list.
-  5. Run ```http:localhost:8080/api/v1/{userId}/{taskId} ``` **to check** the list that have been complete.
+  4. Run ```http:localhost:8080/api/v1/{userId}/{taskId} ``` **to check** the list that have been complete.
   
 #### Note
 * The sign in using google is disable for now as something went wrong.
