@@ -27,9 +27,9 @@ This application was develop to implement a TODO-list server, where your users c
       * Go to resources folder, and open the **application.yml** file to change the password and username of your database
       ```   
       datasource:
-        password: postgres
+        password: your-postgres-password
         url: jdbc:postgresql://localhost:5432/todoserver
-        username: postgres
+        username: your-postgres-username
   3. Run the **ToDOServerApplication.java** to start the server.
   
   ### Testing
