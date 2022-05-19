@@ -20,6 +20,10 @@ public class ToDoListService {
     }
 
     public List<ToDoList> getListByUserId(Long userId){
+        boolean exists = toDoListRepository.existsById(userId);
+        if (!exists){
+            throw new IllegalStateException("user does not exists");
+        }
         return toDoListRepository.findByUserId(userId);
     }
 
