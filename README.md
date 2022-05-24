@@ -72,6 +72,21 @@ This application was develop to implement a TODO-list server, where your users c
     curl -X GET "http://localhost:8080/api/v1/tasks" -H "accept: */*"
     ```
     **to list all** task in the list.
+  3. Run
+    ```
+    curl -X POST "http://localhost:8080/api/v1/task" -H "Content-Type: application/json" -d "{\"title\": \"Draw something\"}"
+    ```
+    **to add** task in the list.
+  4. Run
+    ```
+    curl -X DELETE "http://localhost:8080/api/v1/task/{taskId}" -H "accept: */*"
+    ```
+    **to delete** a task in the list.
+  5. Run
+    ```
+    curl -X PUT "http://localhost:8080/api/v1/task/{taskId}/checked" -H "accept: */*"
+    ```
+    **to check** a task in the list.
   
 #### Note
 * The sign in using google is disable for now as something went wrong.
