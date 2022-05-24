@@ -16,13 +16,13 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
-#  security:
-#       oauth2:
-#         client:
-#           registration:
-#             google:
-#               clientId: [your-clientId]
-#               clientSecret: [your-clientSecret]
-#               scope:
-#                 - email
-#                 - profile
+ security:
+      oauth2:
+        client:
+          registration:
+            google:
+              clientId: [your-clientId]
+              clientSecret: [your-clientSecret]
+              scope:
+                - email
+                - profile
