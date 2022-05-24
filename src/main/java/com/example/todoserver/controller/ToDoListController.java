@@ -39,10 +39,15 @@ public class ToDoListController {
         toDoListService.deleteByTaskId(userId, taskId);
     }
 
-    @RequestMapping(value = "task/{userId}/{taskId}/checked", method = RequestMethod.PUT)
+    @RequestMapping(value = "task/{taskId}", method = RequestMethod.DELETE)
     @ResponseBody
-    public void checkedTask(@PathVariable Long userId,
-                            @PathVariable Long taskId){
-        toDoListService.taskChecked(userId, taskId);
+    public void deleteByTaskId(@PathVariable Long taskId){
+        toDoListService.deleteTask(taskId);
+    }
+
+    @RequestMapping(value = "task/{taskId}/checked", method = RequestMethod.PUT)
+    @ResponseBody
+    public void checkedTask(@PathVariable Long taskId){
+        toDoListService.taskChecked(taskId);
     }
 }

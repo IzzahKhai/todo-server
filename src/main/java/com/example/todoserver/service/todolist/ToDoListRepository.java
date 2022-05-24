@@ -15,7 +15,7 @@ public interface ToDoListRepository extends JpaRepository<ToDoList, Long> {
 
     @Modifying
     @Transactional
-    @Query("UPDATE ToDoList td SET td.checked = TRUE WHERE td.user_id =:userId AND td.id =:taskId")
-    void taskChecked(Long userId, Long taskId);
+    @Query("UPDATE ToDoList td SET td.checked = TRUE WHERE td.id =:taskId")
+    void taskChecked(Long taskId);
 
 }

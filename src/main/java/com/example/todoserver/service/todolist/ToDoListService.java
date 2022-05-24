@@ -39,7 +39,15 @@ public class ToDoListService {
         toDoListRepository.deleteById(taskId);
     }
 
-    public void taskChecked(Long userId, Long taskId){
-        toDoListRepository.taskChecked(userId, taskId);
+    public void deleteTask(Long taskId){
+        boolean exists = toDoListRepository.existsById(taskId);
+        if (!exists){
+            throw new IllegalStateException("task does not exists");
+        }
+        toDoListRepository.deleteById(taskId);
+    }
+
+    public void taskChecked(Long taskId){
+        toDoListRepository.taskChecked(taskId);
     }
 }
