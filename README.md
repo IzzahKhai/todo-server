@@ -18,7 +18,7 @@ This application was develop to implement a TODO-list server, where your users c
   * Intellij IDEA
   * Git
 
-### Installation
+### Installation without Docker
   1. Clone the repo
     ```
      git clone https://github.com/IzzahKhai/todo-server.git
@@ -32,7 +32,22 @@ This application was develop to implement a TODO-list server, where your users c
         username: your-postgres-username
   3. Run the **ToDOServerApplication.java** to start the server.
   
-  ### Testing
+  ### Installation with Docker
+   1. Clone the repo
+    ```
+     git clone https://github.com/IzzahKhai/todo-server.git
+    ```
+   2. Run 
+    ```
+    ./mvnw clean install -DskipTests=true    
+    ``` to create the **.jar** file
+   3. Run 
+    ```
+    docker-compose up
+    ``` 
+    
+  
+  ### Testing with Postman
   1. Run
     ``` 
   http:localhost:8080/api/v1/task 
@@ -49,6 +64,14 @@ This application was develop to implement a TODO-list server, where your users c
     ```
         **to delete** all task in the list.
   4. Run ```http:localhost:8080/api/v1/{userId}/{taskId} ``` **to check** the list that have been complete.
+  
+  ### Testing using curl
+  1. Open **cmd** as administrator.
+  2. Run
+    ```
+    curl -X GET "http://localhost:8080/api/v1/tasks" -H "accept: */*"
+    ```
+    **to list all** task in the list.
   
 #### Note
 * The sign in using google is disable for now as something went wrong.
