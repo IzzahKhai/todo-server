@@ -2,6 +2,7 @@ package com.example.todoserver.entity;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "tb_user")
 public class TbUser {
@@ -21,6 +22,9 @@ public class TbUser {
     private String last_name;
     private String email;
 
+        @Enumerated(EnumType.STRING)
+    private Provider provider;
+
     public TbUser(String first_name, String last_name, String email) {
         this.first_name = first_name;
         this.last_name = last_name;
@@ -30,6 +34,13 @@ public class TbUser {
     public TbUser() {
     }
 
+    public Provider getProvider() {
+        return provider;
+    }
+
+    public void setProvider(Provider provider) {
+        this.provider = provider;
+    }
     public String getFirst_name() {
         return first_name;
     }

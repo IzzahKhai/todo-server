@@ -3,9 +3,13 @@ package com.example.todoserver.controller;
 import com.example.todoserver.entity.ToDoList;
 import com.example.todoserver.service.todolist.ToDoListService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -13,6 +17,12 @@ public class ToDoListController {
 
     @Autowired
     private ToDoListService toDoListService;
+
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String, Object> user(@AuthenticationPrincipal OAuth2User principal){
+        return Collections.singletonMap("name",principal.getAttribute("name"));
+    }
 
     @RequestMapping(value = "/tasks", method = RequestMethod.GET)
     @ResponseBody
